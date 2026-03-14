@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飲食店LP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        body{
+            font-family: 'NoTo Serif JP',serif;
+        }
+
+        header{
+            display:flex;
+            justify-content: space-between;
+            padding: 24px;
+            position:fixed;
+            top:0;
+            left:0;
+            right:0;
+            background-color:#f7f2ea;
+            z-index:100;
+        }
+        header span{
+            display: block;
+            font-size:10px;
+            letter-spacing:0.3em;
+            color:#b8965a;
+        }
+        header ul{
+            display:flex;
+            list-style:none;
+        }
+        header a{
+            text-decoration: none;
+            margin-left:36px;
+        }
+        .hero{
+            display:flex;
+            height:100vh;
+            align-items:stretch;
+        }
+        .hero-text{
+            width:50%;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            padding:60px;
+            padding-top:120px;
+        }
+        .hero-img{
+            width:50%;
+            background-color:#6b4226;
+            align-self: stretch;
+        }
+        .hero-img img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+        .hero-label{
+            font-size:10px;
+            letter-spacing:0.3em;
+            color:#b8965a;
+
+        }
+        .hero-text h1{
+            font-size:64px;
+            margin-bottom:24px;
+        }
+        .hero-title-en{
+            font-family:'Cormorant Garamond', serif;
+            font-size:20px;
+            font-style:italic;
+            letter-spacing:0.1em;
+            color:#b8965a;
+            margin-bottom: 32px;
+        }
+        .hero-text p{
+            font-size:16px;
+            line-height:2;
+            margin-bottom:50px;
+        }
+        .hero-text a{
+            display:inline-block;
+            padding:16px 48px;
+            background-color: #8b2020;
+            color:#f7f2ea;
+            text-decoration:none;
+            font-size:14px;
+            letter-spacing:0.3em;
+            width: fit-content;
+        }
+
+        .concept{
+            display:flex;
+            height:100vh;
+        }
+        .concept-img{
+            width:50%;
+            background-color:#6b4226;
+        }
+        .concept-img img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+        .concept-text{
+            width:50%;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            padding:60px;
+        }
+        .concept-label{
+            font-size:10px;
+            letter-spacing:0.3em;
+            color:#b8965a;
+        }
+        .concept-text h2{
+
+             font-size:48px;
+            margin-bottom:24px;
+        }
+        .concept-text p{
+            font-size:16px;
+            line-height:2;
+            margin-bottom:40px;
+        }
+        .menu{
+            background-color: black;
+            padding:80px;
+        }
+        .menu-header{
+            text-align:center;
+            margin-bottom:60px;
+        }
+        .menu-header p{
+            font-size:11px;
+            letter-spacing: 0.5em;
+            color: #b8965a;
+            margin-bottom:16px;
+        }
+        .menu-header h2{
+            font-size:48px;
+            color: #f7f2ea;
+        }
+        .menu-grid{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap:2px;
+        }
+        .menu-img{
+            height:320px;
+        }
+        .menu-img img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+
+        .menu-item:nth-child(1) .menu-img{
+            background-color:#3a2a1a;
+        }
+        .menu-item:nth-child(2) .menu-img{
+            background-color:#2a1a1a;
+        }
+        .menu-item:nth-child(3) .menu-img{
+            background-color:#1a2a1a;
+        }
+
+        .menu-info{
+            padding:24px;
+        }
+        .menu-info h3{
+            font-size:20px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .menu-info p{
+            font-size:14px;
+            margin-bottom:16px;
+            color:#808080
+        }
+        .menu-info .menu-price{
+            color:#b8965a;
+            font-size:22px;
+        }
+
+        .info{
+            display:flex;
+            padding: 100px;
+            align-items: stretch;
+        }
+        .info-map{
+            width:50%;
+            background-color: aliceblue;
+        }
+        .info-label{
+            color: #b8965a;
+            font-size: 14px;
+            letter-spacing: 0.3em;
+            margin-bottom: 10px;
+        }
+        .info-text{
+            width:50%;
+            padding: 0 80px 0 80px;
+            font-size:24px;
+         }
+        .info-text td{
+            padding:16px 0;
+            font-size:16px;
+            line-height:1.8;
+        }
+        .info-text td:first-child{
+            color:#b8965a;
+            font-size:14px;
+            width:100px;
+            vertical-align:top;
+        }
+        .info-text table{
+            border-collapse:collapse;
+        }
+        .info-text tr{
+            border-bottom:1px solid rgba(184,150,90,0.2);
+
+        }
+
+        footer{
+            background-color: #000;
+            text-align: center;
+            color:#808080;
+            padding: 40px;
+            letter-spacing:0.3em;
+        }
+
+
+    </style>
+</head>
+<body>   
+    <header>
+     <div class="logo">SAKURA DINING
+     <span>さくら ダイニング</span>
+    </div>
+
+     <nav>
+        <ul>
+            <li><a href="#">コンセプト</a></li>
+            <li><a href="#">メニュー</a></li>
+            <li><a href="#">アクセス</a></li>
+            <li><a href="#">ご予約</a></li>
+        </ul>
+     </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <p class="hero-label">JAPANESE DINING — KYOTO INSPIRED</p>
+            <h1>四季を<br>皿に盛る</h1>
+            <p class="hero-title-en">The Seasons on Your Plate</p>
+            <p>京都の食文化に学び、旬の素材だけを使った日本料理をお届けします。<br>特別な夜に、忘れられない一皿を。</p>
+            <a href="#">ご予約はこちら</a>    
+        </div>
+        <div class="hero-img">
+            <img src="hero.jpg" alt="メインビジュアル">
+        </div>
+    </section>
+
+    <section class="concept">
+        <div class="concept-img">
+            <img src="concept.jpg" alt="料理">
+        </div>
+        <div class="concept-text">
+            <p class="concept-label">CONCEPT</p>
+            <h2>素材と<br>向き合う時間</h2>
+            <p>全国各地の生産者と直接つながり、<br>毎日届く食材を最良の状態でお出しします。</p>
+            <p>余計なものは加えない。<br>素材そのものの声を聞き、<br>シンプルに、丁寧に仕上げることが<br>私たちの流儀です。</p>
+        </div>
+
+    </section>
+
+    <section class="menu">
+        <div class="menu-header">
+            <p>MENU</p>
+            <h2>おすすめの一品</h2>
+        </div>
+        <div class="menu-grid">
+
+            <div class="menu-item">
+                <div class="menu-img">
+                    <img src="menu-1.jpg" alt="旬魚の造里">
+                </div>
+                <div class="menu-info">
+                    <h3>旬魚の造里</h3>
+                    <p>その日の朝に届いた鮮魚を<br>丁寧に引いた刺身の盛り合わせ</p>
+                    <p class="menu-price">¥2,800</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-img">
+                    <img src="menu-2.jpg" alt="黒毛和牛の炭火焼き">
+                </div>
+                <div class="menu-info">
+                    <h3>黒毛和牛の炭火焼き</h3>
+                    <p>A5ランク黒毛和牛を<br>炭火でじっくりと仕上げた一品</p>
+                    <p class="menu-price">¥4,500</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-img">
+                    <img src="menu-3.jpg" alt="季節の炊き合わせ">
+                </div>
+                <div class="menu-info">
+                    <h3>季節の炊き合わせ</h3>
+                    <p>旬の野菜をだしで炊いた<br>やさしい味わいの一皿</p>
+                    <p class="menu-price">¥1,600</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="info">
+        <div class="info-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.750878624935!2d139.69735498970206!3d35.65850896373079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b563b00109f%3A0x337328def1e2ab26!2z5riL6LC36aeF!5e0!3m2!1sja!2sjp!4v1773464411882!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="info-text">
+            <p class="info-label">ACCESS</p>
+            <h3>店舗情報</h3>
+            <table>
+                <tr>
+                    <td>住所</td>
+                    <td>東京都渋谷区神南1-2-3 さくらビル2F</td>
+                </tr>
+                <tr>
+                    <td>営業時間</td>
+                    <td>17:00~23:00(L.O 22:00)<br>※日曜定休</td>
+                </tr>
+                <tr>
+                    <td>電話</td>
+                    <td>03-1234-5678</td>
+                </tr>
+                <tr>
+                    <td>アクセス</td>
+                    <td>渋谷駅 徒歩5分</td>
+                </tr>
+
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SAKURA DINING. All Rights Reserved.</p>
+    </footer>
+    
+</body>
+</html>
