@@ -12,7 +12,7 @@
             box-sizing:border-box;
         }
         body{
-            font-family: 'NoTo Serif JP',serif;
+            font-family: 'Noto Serif JP',serif;
         }
 
         header{
@@ -40,19 +40,20 @@
             text-decoration: none;
             margin-left:36px;
         }
-        .hero{
-            display:flex;
-            height:100vh;
-            align-items:stretch;
+        .hero {
+            display: flex;
+            height: 100vh;
+            align-items: stretch;
+            padding-top: 80px; /* heroセクション全体を下げる */
         }
-        .hero-text{
-            width:50%;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            padding:60px;
-            padding-top:140px;
-        }
+        .hero-text {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            padding-top: 80px;
+            }
         .hero-img{
             width:50%;
             background-color:#6b4226;
@@ -63,10 +64,11 @@
             height:100%;
             object-fit:cover;
         }
-        .hero-label{
-            font-size:8px;
+        .hero-text .hero-label{
+            font-size:12px;
             letter-spacing:0.3em;
             color:#b8965a;
+            margin-top:80px;
         }
         .hero-text h1{
             font-size:56px;
@@ -83,7 +85,7 @@
         .hero-text p{
             font-size:16px;
             line-height:2;
-            margin-bottom:50px;
+            margin-bottom:25px;
         }
         .hero-text a{
             display:inline-block;
@@ -117,8 +119,8 @@
             justify-content:center;
             padding:60px;
         }
-        .concept-label{
-            font-size:10px;
+        .concept-text .concept-label{
+            font-size:12px;
             letter-spacing:0.3em;
             color:#b8965a;
         }
